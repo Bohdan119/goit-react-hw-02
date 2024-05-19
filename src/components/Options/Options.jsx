@@ -1,16 +1,11 @@
-const Options = ({ updateFeedback, totalFeedback }) => {
+const Options = ({ updateFeedback, handleResetFeedback, totalFeedback }) => {
   const handleClick = (type) => {
-    updateFeedback((prevTypes) => ({
-      ...prevTypes,
-      [type]: prevTypes[type] + 1,
-    }));
-  };
-
-  const hendleResetFeedback = () => {
-    updateFeedback({
-      good: 0,
-      neutral: 0,
-      bad: 0,
+    updateFeedback((prevFeedback) => {
+      const newFeedback = {
+        ...prevFeedback,
+        [type]: prevFeedback[type] + 1,
+      };
+      return newFeedback;
     });
   };
 
@@ -20,7 +15,7 @@ const Options = ({ updateFeedback, totalFeedback }) => {
       <button onClick={() => handleClick("neutral")}>Neutral</button>
       <button onClick={() => handleClick("bad")}>Bad</button>
       {totalFeedback > 0 && (
-        <button onClick={hendleResetFeedback}>RESET</button>
+        <button onClick={handleResetFeedback}>RESET</button>
       )}
     </div>
   );
