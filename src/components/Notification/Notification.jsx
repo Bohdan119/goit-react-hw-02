@@ -7,6 +7,7 @@ const Notification = ({
     <div>
       {totalFeedback > 0 ? (
         <>
+          <p>Total feedback: {totalFeedback}</p>
           <p>Positive feedback: {positiveFeedbackPercentage}%</p>
         </>
       ) : (
