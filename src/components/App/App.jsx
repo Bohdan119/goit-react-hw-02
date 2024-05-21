@@ -45,7 +45,11 @@ function App() {
         totalFeedback={totalFeedback}
       />
       {totalFeedback > 0 ? (
-        <Feedback feedbackTypes={feedbackTypes} totalFeedback={totalFeedback} />
+        <Feedback
+          feedbackTypes={feedbackTypes}
+          totalFeedback={totalFeedback}
+          positiveFeedbackPercentage={positiveFeedbackPercentage}
+        />
       ) : (
         <Notification
           message="No feedback yet"
